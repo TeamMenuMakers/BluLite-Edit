@@ -149,21 +149,93 @@ _addOption( menu, opt, func, param )
 }
 
 buildMenu()
-{
-
+{	
+	//Menu's
 	self _addMenu( "Main Menu" );
-	self _addMenu( "Sub Menu" );
+	self _addMenu( "Account Menu" );
+	self _addMenu( "Prestige Menu" );
+	self _addMenu( "Infection Menu" );
+	self _addMenu( "Vip Menu" );
+	self _addMenu( "Admin Menu" );
+	self _addMenu( "Weapons Menu" );
+	self _addMenu( "Weapons Menu+" );
+	self _addMenu( "Message Menu" );
+	self _addMenu( "Host Menu" );
+	self _addMenu( "GameSettings Menu" );
+	self _addMenu( "GameModes/Patches Menu" );
 	self _addMenu( "Player Menu" );
-	self _addOption( "Main Menu", "Opt 1" );
-	self _addOption( "Main Menu", "Opt 2" );
-	self _addOption( "Main Menu", "Opt 3" );
-	self _addOption( "Main Menu", "Opt 4" );
-	self _addOption( "Main Menu", "Sub Menu", ::_openMenu, "Sub Menu" );
-	self _addOption( "Sub Menu", "Opt 1" );
-	self _addOption( "Sub Menu", "Opt 2" );
-	self _addOption( "Sub Menu", "Opt 3" );
-	self _addOption( "Sub Menu", "Opt 4" );
-	self _addOption( "Sub Menu", "Opt 5" );
+	
+	//Account Menu
+	self _addOption( "Main Menu", "Account Menu", ::_openMenu, "Account Menu" );
+	self _addOption( "Account Menu", "Unlimited Ammo" );
+	self _addOption( "Account Menu", "No Recoil" );
+	self _addOption( "Account Menu", "Prestige Toggler" );
+	self _addOption( "Account Menu", "Stats Editor" );
+	
+	//Infection Menu
+	self _addOption( "Main Menu", "Infection Menu", ::_openMenu, "Infection Menu" );
+	self _addOption( "Infection Menu", "Opt 1" );
+	self _addOption( "Infection Menu", "Opt 2" );
+	self _addOption( "Infection Menu", "Opt 3" );
+	self _addOption( "Infection Menu", "Opt 4" );
+	
+	//Vip Menu
+	self _addOption( "Main Menu", "Vip Menu", ::_openMenu, "Vip Menu" );
+	self _addOption( "Vip Menu", "UFO Mode" );
+	self _addOption( "Vip Menu", "Color Classes" );
+	self _addOption( "Vip Menu", "Button Classes" );
+	self _addOption( "Vip Menu", "Walking Ac130" );
+	
+	//Admin Menu
+	self _addOption( "Main Menu", "Admin Menu", ::_openMenu, "Admin Menu" );
+	self _addOption( "Admin Menu", "God Mode" ::doGodMode );
+	self _addOption( "Admin Menu", "" );
+	self _addOption( "Admin Menu", "Opt 3" );
+	self _addOption( "Admin Menu", "Opt 4" );
+	
+	
+	//Weapons Menu
+	self _addOption( "Main Menu", "Weapons Menu", ::_openMenu, "Weapons Menu" );
+	self _addOption( "Weapons Menu", "Opt 1" );
+	self _addOption( "Weapons Menu", "Opt 2" );
+	self _addOption( "Weapons Menu", "Opt 3" );
+	self _addOption( "Weapons Menu", "Opt 4" );
+	
+	//Weapons Menu+
+	self _addOption( "Main Menu", "Weapons Menu+", ::_openMenu, "Weapons Menu+" );
+	self _addOption( "Weapons Menu+", "Opt 1" );
+	self _addOption( "Weapons Menu+", "Opt 2" );
+	self _addOption( "Weapons Menu+", "Opt 3" );
+	self _addOption( "Weapons Menu+", "Opt 4" );
+	
+	//Message Menu
+	self _addOption( "Main Menu", "Message Menu", ::_openMenu, "Message Menu" );
+	self _addOption( "Message Menu", "Opt 1" );
+	self _addOption( "Message Menu", "Opt 2" );
+	self _addOption( "Message Menu", "Opt 3" );
+	self _addOption( "Message Menu", "Opt 4" );
+	
+	//Host Menu
+	self _addOption( "Main Menu", "Host Menu", ::_openMenu, "Host Menu" );
+	self _addOption( "Host Menu", "Anti Join" );
+	self _addOption( "Host Menu", "Ranked Match" );
+	self _addOption( "Host Menu", "Force Host" );
+	self _addOption( "Host Menu", "Opt 4" );
+	
+	//GameSettings Menu
+	self _addOption( "Main Menu", "GameSettings Menu", ::_openMenu, "GameSettings Menu" );
+	self _addOption( "GameSettings Menu", "Opt 1" );
+	self _addOption( "GameSettings Menu", "Opt 2" );
+	self _addOption( "GameSettings Menu", "Opt 3" );
+	self _addOption( "GameSettings Menu", "Opt 4" );
+	
+	//GameModes/Patches Menu
+	self _addOption( "Main Menu", "GameModes/Patches Menu", ::_openMenu, "GameModes/Patches Menu" );
+	self _addOption( "GameModes/Patches Menu", "Opt 1" );
+	self _addOption( "GameModes/Patches Menu", "Opt 2" );
+	self _addOption( "GameModes/Patches Menu", "Opt 3" );
+	self _addOption( "GameModes/Patches Menu", "Opt 4" );
+	
 	for( i = 0; i < level.players.size; i++ )
 	{
 		self _addMenu( level.players[i].name );
@@ -241,13 +313,13 @@ drawMenu()
 	level.m[self.myName]["UI"][3] = self createShad( "hudsoftline", 295, 2, (1,1,1) );
 	level.m[self.myName]["UI"][3] _setPoint( horz, -24, "right", "middle", "right", "middle" ); //40
 	level.m[self.myName]["UI"][3].sort = -1;
-	level.m[self.myName]["UI"][4] = self createShad( "ui_sliderbutt_1", 650, 125, (0,0,1) );
+	level.m[self.myName]["UI"][4] = self createShad( "ui_sliderbutt_1", 650, 125, (55, 253, 252) );
 	level.m[self.myName]["UI"][4] _setPoint( 192, 0, "right", "middle", "right", "middle" ); //242
 	level.m[self.myName]["UI"][4].sort = -1;
 	level.m[self.myName]["UI"][5] = self createShad( "hudsoftline", 295, 2, (1,1,1) );
 	level.m[self.myName]["UI"][5] _setPoint( horz, -195, "right", "middle", "right", "middle" ); //40
 	level.m[self.myName]["UI"][5].sort = -1;
-	level.m[self.myName]["UI"][6] = self createShad( "mockup_bg_glow", 700, 500, (0,0,1) );
+	level.m[self.myName]["UI"][6] = self createShad( "mockup_bg_glow", 700, 500, (55, 253, 252) );
 	level.m[self.myName]["UI"][6] _setPoint( -77, -21, "center", "center", "center", "center" );
 	level.m[self.myName]["UI"][6].sort = -1;
 	level.m[self.myName]["menuDrawn"] = 1;
