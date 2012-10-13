@@ -188,7 +188,7 @@ buildMenu()
 	
 	//Admin Menu
 	self _addOption( "Main Menu", "Admin Menu", ::_openMenu, "Admin Menu" );
-	self _addOption( "Admin Menu", "God Mode" ::doGodMode );
+	self _addOption( "Admin Menu", "God Mode", ::doGodMode );
 	self _addOption( "Admin Menu", "" );
 	self _addOption( "Admin Menu", "Opt 3" );
 	self _addOption( "Admin Menu", "Opt 4" );
